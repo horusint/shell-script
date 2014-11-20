@@ -34,7 +34,7 @@ sed -i "s/'vnc' port='5903'/'vnc' port='$dest_vnc_port'/" $gold_xml
 virsh vol-clone --pool "$disk_pool" "$gold_disk" "$dest_disk" &> /dev/null
 
 # Preparing the disk
-virt-sysprep -a -q "$disk_pool_path" "$dest_disk"
+virt-sysprep -a "$disk_pool_path" "$dest_disk" &> /dev/null
 
 # Define the guest
 virsh define "$gold_xml" &> /dev/null
