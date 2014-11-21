@@ -7,14 +7,13 @@
 #            Ubuntu 14.04
 
 # Created by: Jonatas B.
-# Last mod: 20-11-2014
+# Last mod: 21-11-2014
 
 disk_pool="sdb1-guests"
 disk_pool_path="/guests/"
 gold_disk="centos7-gold.qcow2"
 gold_name="centos7-gold"
 gold_xml="/tmp/gold.xml"
-gold_vnc_port="5903"
 dest_disk="centos7-02.qcow2"
 dest_name="centos7-02"
 dest_vnc_port="5905"
@@ -30,7 +29,7 @@ sed -i "s/"$gold_name"/"$dest_name"/" $gold_xml
 sed -i "/\<uuid\>/d" $gold_xml 
 sed -i "/\<mac address\>/d" $gold_xml
 sed -i "s/"$gold_disk"/$dest_disk/" $gold_xml
-sed -i "s/'vnc' port='$gold_vnc_port'/'vnc' port='$dest_vnc_port'/" $gold_xml
+sed -i "s/type='vnc' port='\([0-9]*\)'/type='vnc' port='$dest_vnc_port'/" $gold_xml
 
 # Cloning the gold disk
 virsh vol-clone --pool "$disk_pool" "$gold_disk" "$dest_disk" &> /dev/null
