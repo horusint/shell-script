@@ -2,6 +2,7 @@
 
 # Script to install Ansible from PPA or EPEL
 # If you want to improve it, just contribute!
+# You can install with curl -s https://raw.githubusercontent.com/jonatasbaldin/shell-script/master/install_ansible.sh | sudo bash
 
 # Verify root
 if [ $(id -u) != 0 ] ; then
