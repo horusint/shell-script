@@ -2,6 +2,9 @@
 
 # Script to prepare CentOS base-image for deploying as a template
 # Created by: Jonatas Baldin
+# Based on: 
+#   https://lonesysadmin.net/2013/03/26/preparing-linux-template-vms/
+#   http://libguestfs.org/virt-sysprep.1.html
 # Tested on CentOS 7
 # You can run it with curl -s https://raw.githubusercontent.com/jonatasbaldin/shell-script/master/centos-sysprep.sh | sudo bash
 
