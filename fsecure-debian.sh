@@ -37,7 +37,7 @@ if ! apt-get install -qq -y $F_PACKAGES > /dev/null ; then
 fi
 
 # Configure firewall
-for i in 80 8080 8081 ; do
+for i in 90 9090 9091 ; do
     if ! iptables -A INPUT -p tcp --dport $i -j ACCEPT > /dev/null; then
         echo "Cannot configure firewall, verify iptables configuration" >> $F_LOG
 	exit 1
