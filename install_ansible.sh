@@ -22,10 +22,7 @@ elif [ -f /etc/os-release ] ; then
     VER="$REDHAT_SUPPORT_PRODUCT_VERSION" #7
 fi
 
-echo $OS
-echo $VER
-
-if [ "$OS" = "LinuxMint" -o "$OS" = "Ubuntu" ] ; then
+if [ "$OS" = "LinuxMint" -o "$OS" = "Ubuntu" -o "elementary OS" ] ; then
     apt-get install software-properties-common
     apt-add-repository ppa:ansible/ansible -y
     apt-get update -y 
