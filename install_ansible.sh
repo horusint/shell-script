@@ -25,8 +25,8 @@ fi
 if [ "$OS" = "LinuxMint" -o "$OS" = "Ubuntu" -o "elementary OS" ] ; then
     apt-get install software-properties-common
     apt-add-repository ppa:ansible/ansible -y
-    apt-get update -y 
-    apt-get install ansible -y 
+    apt-get update -o Acquire::ForceIPv4=true -y
+    apt-get install ansible -o Acquire::ForceIPv4=true -y 
 elif [ "$OS" = "centos" -a "$VER" -eq 7 ] ; then	
     rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum update -y
