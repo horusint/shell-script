@@ -22,13 +22,15 @@ elif [ -f /etc/os-release ] ; then
     VER="$REDHAT_SUPPORT_PRODUCT_VERSION" #7
 fi
 
-if [ "$OS" = "LinuxMint" -o "$OS" = "Ubuntu" -o "elementary OS" ] ; then
-    apt-get install software-properties-common
-    apt-add-repository ppa:ansible/ansible -y
-    apt-get update -o Acquire::ForceIPv4=true -y
-    apt-get install ansible -o Acquire::ForceIPv4=true -y 
-elif [ "$OS" = "centos" -a "$VER" -eq 7 ] ; then	
-    rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    yum update -y
-    yum install ansible -y
+if [[ ! -e $(which ansible) ]] ; then
+    if [ "$OS" = "LinuxMint" -o "$OS" = "Ubuntu" -o "elementary OS" ] ; then
+        apt-get install software-properties-common
+        apt-add-repository ppa:ansible/ansible -y
+        apt-get update -o Acquire::ForceIPv4=true -y
+        apt-get install ansible -o Acquire::ForceIPv4=true -y 
+    elif [ "$OS" = "centos" -a "$VER" -eq 7 ] ; then	
+        rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        yum update -y
+        yum install ansible -y
+    fi
 fi
