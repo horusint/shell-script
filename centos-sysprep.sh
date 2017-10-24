@@ -15,8 +15,8 @@
 # Update packages
 /usr/bin/yum update -q -y
 
-# Install open-vm-tools
-/usr/bin/yum install -q -y open-vm-tools
+# Install open-vm-tools (Only Vmware
+# /usr/bin/yum install -q -y open-vm-tools
 
 # Clean yum
 /usr/bin/yum clean -q all
