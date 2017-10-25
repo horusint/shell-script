@@ -6,7 +6,7 @@
 #   https://lonesysadmin.net/2013/03/26/preparing-linux-template-vms/
 #   http://libguestfs.org/virt-sysprep.1.html
 # Tested on CentOS 7
-# You can run it with curl -s https://raw.githubusercontent.com/jonatasbaldin/shell-script/master/centos-sysprep.sh | sudo bash
+# You can run it with curl -s https://raw.githubusercontent.com/horusint/shell-script/master/centos-sysprep.sh | sudo bash
 
 # Stop logging servers
 /sbin/service rsyslog stop > /dev/null
